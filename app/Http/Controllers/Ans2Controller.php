@@ -15,8 +15,7 @@ class Ans2Controller extends Controller
      */
     function index()
     {
-        $answers2 = Pg2Mod::all()->toArray();
-        return view('pages.summary', compact('answers2'));
+    
         
     }
 

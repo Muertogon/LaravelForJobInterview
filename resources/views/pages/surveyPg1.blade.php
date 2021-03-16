@@ -1,7 +1,10 @@
 @extends('layouts.app')
 @section('content')
 <div class="container-lg">
-    <h2> First survey page</h2>
+    <div class="d-flex justify-content-center p-3">
+        <h2> First survey page</h2>
+    </div>
+    <div class="d-flex justify-content-center">
 {!! Form::open(['action' => 'App\Http\Controllers\Ans1Controller@store', 'method'=>'POST']) !!}
     <div class="form-group">
         {{ Form::label('question1', 'How many foreign countries have you visited?') }}
@@ -43,7 +46,7 @@
         {{ Form::radio('question3', 'opt5') }} None
     </div>
     <div class="form-group">
-        {{ Form::label('question4', 'How often do you travel to foreign places') }}
+        {{ Form::label('question4', 'How often do you travel to foreign places?') }}
         <br> 
         {{ Form::radio('question4', 'opt1') }} Very often
         <br>
@@ -56,7 +59,7 @@
         {{ Form::radio('question4', 'opt5') }} I don't
     </div>
     <div class="form-group">
-        {{ Form::label('question5', 'Which one of the countries do you think is the most unsafe ') }}
+        {{ Form::label('question5', 'Which one of the countries do you think is the most unsafe?') }}
         <br> 
         {{ Form::radio('question5', 'opt1') }} Mexico
         <br>
@@ -68,8 +71,9 @@
         <br>
         {{ Form::radio('question5', 'opt5') }} Peru
     </div>
+    {{ Form::submit('Next Page', ['class'=> 'btn btn-outline-dark']) }}
+</div>
     
-    {{ Form::submit('Next Page', ['class'=> 'btn btn-primary']) }}
 {!! Form::close() !!}
 </div>
 @endsection

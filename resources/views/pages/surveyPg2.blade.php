@@ -1,7 +1,10 @@
 @extends('layouts.app')
 @section('content')
 <div class="container-lg">
-    <h2> Second survey page</h2>
+    <div class="d-flex justify-content-center p-3">
+        <h2> Second survey page</h2>
+    </div>
+    <div class="d-flex justify-content-center">
 {!! Form::open(['action' => 'App\Http\Controllers\Ans2Controller@store', 'method'=>'POST']) !!}
     <div class="form-group">
         {{ Form::label('question6', 'Which transport do you use most often?') }}
@@ -30,7 +33,7 @@
         {{ Form::radio('question7', 'opt5') }} 5 or more
     </div>
     <div class="form-group">
-        {{ Form::label('question8', 'Which continent are you planning on visiting>') }}
+        {{ Form::label('question8', 'Which continent are you planning on visiting?') }}
         <br> 
         {{ Form::radio('question8', 'opt1') }} North America
         <br>
@@ -68,8 +71,7 @@
         <br>
         {{ Form::radio('question10', 'opt5') }} 1 month or more
     </div>
-    
-    {{ Form::submit('Summary', ['class'=> 'btn btn-primary']) }}
+    {{ Form::submit('Summary', ['class'=> 'btn btn-outline-dark']) }}
 {!! Form::close() !!}
 </div>
 @endsection

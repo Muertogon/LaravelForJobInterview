@@ -23,7 +23,7 @@ Route::resource('notes', 'App\Http\Controllers\Ans1Controller');
 Route::resource('notes2', 'App\Http\Controllers\Ans2Controller');
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Route::get('auth/google', 'App\Http\Controllers\Auth\GoogleController@redirectToGoogle');
 Route::get('auth/google/callback', 'App\Http\Controllers\Auth\GoogleController@handleGoogleCallback');
 Route::get('summary', 'App\Http\Controllers\Ans1Controller@index');

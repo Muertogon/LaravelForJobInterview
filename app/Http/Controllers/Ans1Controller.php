@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Pg1Mod;
+use App\Models\Pg2Mod;
 
 class Ans1Controller extends Controller
 {
@@ -16,7 +17,8 @@ class Ans1Controller extends Controller
     function index()
     {
         $answers = Pg1Mod::all()->toArray();
-        return view('pages.summary', compact('answers'));
+        $answers2 = Pg2Mod::all()->toArray();
+        return view('pages.summary', compact('answers', 'answers2'));
     }
 
     /**
